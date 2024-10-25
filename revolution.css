@@ -1,0 +1,423 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body {
+    font-family: system-ui;
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    list-style-type: none;
+    flex-wrap: wrap;
+    background-image: url('sample1-transformed.png');
+    background-size: cover; /* Ensure the image covers the navbar */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    height: auto; /* Allow height to adjust based on content */
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0 15px;
+}
+a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    background-color: transparent;
+    position: relative; /* Required for pseudo-element positioning */
+}
+a:not(.subscribe-btn)::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px; /* Height of the underline */
+    background-color: white; /* Color of the underline */
+    left: 0;
+    bottom: -2px; /* Position the underline just below the text */
+    transition: width 0.3s ease-in-out; /* Smooth transition */
+}
+
+a:not(.subscribe-btn):hover::after {
+    width: 100%; /* Expands the underline on hover */
+}
+
+.subscribe-btn {
+    padding: 8px 16px;
+    border: 2px solid #ffffff;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.subscribe-btn:hover {
+    background-color: #ffffff;
+    color: #333;
+}
+label #btn,
+  label #cancel{
+    margin-bottom: 30px;
+    color: #3431e0;
+    font-size: 30px;
+    float: right;
+    line-height: 90px;
+    margin-right: 5px;
+    cursor: pointer;
+    display: none;
+  }
+  #check{
+    display: none;
+  }
+/* Latest Articles Section */
+.latest-articles {
+    padding: 40px 10px;
+    text-align: center;
+}
+.section-title {
+    letter-spacing: 4px;
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+/* Article Title Style */
+h2 {
+    color: #ffffff;
+    font-size: 24px; /* Initial font size for larger screens */
+    font-weight: normal;
+    margin: 0 auto;
+    border-bottom: 3px solid #000000; /* Fixed border size */
+    padding-bottom: 5px; /* Normal padding for bottom */
+    display: inline-block; 
+    text-align: center;
+    text-decoration: none; /* Prevents text underline */
+}
+
+/* Responsive Articles Grid */
+.articles-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: center; /* Center articles in the grid */
+    margin: 0 -10px; /* Negative margin for proper spacing */
+}
+
+/* Adjust the article class */
+.article {
+    flex: 1 1 calc(33.333% - 20px); /* 3 articles per row with space */
+    max-width: 400px; /* Limit max width */
+    background-color: #f4f4f4;
+    padding: 5px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: center; 
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    margin: 10px; /* Margin for spacing between articles */
+   
+}
+
+.article h2.title {
+    color: #000000;
+    font-size: 2rem; 
+    font-weight: bold;
+    margin: 0 auto;
+    text-align: center; /* Centers the article title */
+}
+
+.article:hover {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    
+}
+
+.article img {
+    width: 100%;
+    height: auto; /* Make image height responsive */
+    position: relative;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.article img:hover {
+    transform: scale(1.05);
+}
+
+.article p {
+    margin-bottom: 20%;
+    margin-top: 5%;
+    text-align: center;
+    font-weight: normal;
+    font-size: 16px;
+    color: #333;
+    transition: color 0.3s ease;
+    text-decoration: none; /* Ensure no underline for paragraphs */
+}
+
+.article:hover p {
+    color: #7a8a75;
+}
+
+.note-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 25px;
+}
+.note-date {
+    font-size: 12px;
+    color: #999;
+    margin-left: auto; 
+    margin-top: -25%;
+    text-decoration: none; /* Ensure no underline */
+}
+
+
+/* ----------- Full HD Screens and Larger (1920px and above) ----------- */
+@media screen and (min-width: 1920px) {
+    .logo {
+        font-size: 30px;    
+    }
+    .menu a {
+        font-size: 30px;
+    }
+}
+
+/* ----------- Large Desktops (1200px and above) ----------- */
+@media screen and (max-width: 1200px) {
+    .logo {
+        font-size: 30px; 
+    }   
+  .menu a {
+        font-size: 30px;
+    }
+    .articles-grid {
+        justify-content: center; /* Center articles */
+    }
+    .article {
+        flex: 1 1 calc(50% - 20px); /* 2 articles per row */
+    }
+
+    .section-title {
+        font-size: 20px; /* Adjust title size */
+    }
+
+    h2 {
+        font-size: 20px; /* Adjust heading size */
+
+    }
+
+}
+@media screen and (max-width: 1024px) {
+    .logo {
+        font-size: 30px;
+       
+    }
+    .menu a {
+        font-size: 30px;
+    }
+    
+    .navbar {
+        padding: 15px;
+    }
+    .article {
+        flex: 1 1 calc(60% - 20px); /* 2 articles per row */
+    }
+
+    .section-title {
+        font-size: 20px; /* Adjust title size */
+    }
+
+    h2 {
+        font-size: 20px; /* Adjust heading size */
+    }
+}
+@media screen and (max-width: 991px) {
+    .logo {
+        font-size: 25px;
+       
+    }   
+    .menu a {
+        font-size: 25px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .logo {
+        font-size: 30px;
+       
+    }   
+    .menu a {
+        font-size: 30px;
+    } 
+    .navbar {
+        padding: 10px;
+    }
+    .menu a {
+        padding: 15px 0; 
+    }
+}
+@media screen and (max-width: 480px) {
+    .section-title {
+        font-size: 16px; /* Further reduce title size */
+    }
+
+    h2 {
+        font-size: 16px; /* Further reduce heading size */
+        border-bottom: calc(1px + 0.3vw) solid #000000; /* Responsive border size */
+    }
+    .logo {
+        font-size: 30px;
+       
+    }
+    .navbar {
+        padding: 5px; /* Further reduce padding */
+        background-size: cover; /* Ensure it covers well */
+    }
+    label #btn{
+        display: block;
+    }
+    .article {
+        flex: 1 1 100%; /* 1 article per row on small screens */
+    }
+     p {
+        font-size: 18px; /* Further reduce font size for smaller screens */
+       
+    }
+    .menu a {
+        font-size: 30px;
+    }
+    
+}
+@media screen and (max-width: 768px) {
+    .logo {
+        font-size: 34px;
+        font-weight: bold;
+        color: #ffffff;
+        margin: 25px 5px;
+    }
+     p {
+        font-size: 20px; /* Slightly reduce font size */
+       
+    }
+
+    .navbar {
+        padding: 10px; /* Reduce padding for smaller screens */
+        background-size: cover; /* Ensure it covers well */
+    }
+        .subscribe-btn {
+            font-size: 30px;
+        }
+    /* Remove hover effect on Subscribe button */
+    .subscribe-btn:hover {
+        background-color: transparent;
+        color: inherit;
+        text-decoration: none;
+    }
+
+    /* General hover effect for menu items except Subscribe */
+    .menu a:not(.subscribe-btn):hover {
+        background-color: transparent;
+        text-decoration: underline;
+        color: white;
+        cursor: pointer;
+    }
+    .article {
+        flex: 1 1 100%; /* 1 article per row */
+       
+    }
+
+    .section-title {
+        font-size: 18px; /* Smaller title size */
+
+    }
+
+    h2 {
+        font-size: 18px; /* Smaller heading size */
+     border-bottom: calc(1px + 0.3vw) solid #000000; /* Responsive border size */
+        
+    }
+    .article img {
+        height: auto; /* Maintain aspect ratio */
+    }
+    .menu {
+        display: none; /* Initially hidden */
+        flex-direction: column;
+        position: fixed;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba( 255, 255, 255, 0 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 10px );
+        -webkit-backdrop-filter: blur( 10px );
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.5s ease-in-out;
+        z-index: 10;
+    }
+
+    /* When the menu checkbox is checked, show the menu */
+    #check:checked ~ .menu {
+        display: flex;
+    }
+
+    /* Hamburger icon displayed on mobile */
+    label #btn {
+        display: block;
+        font-size: 34px;
+        cursor: pointer;
+        color: white;
+    }
+
+    /* Initially, the close icon is hidden */
+    label #cancel {
+        display: none;
+        font-size: 34px;
+        cursor: pointer;
+        color: white;
+    }
+
+    /* When the menu is open, hide the hamburger icon and show the close icon */
+    #check:checked ~ label #btn {
+        display: none;
+    }
+
+    #check:checked ~ label #cancel {
+        display: block;
+    }
+
+    /* Menu links styling */
+    .menu a {
+        color: #ffffff;
+        font-size: 34px;
+        padding: 10px 20px;
+        text-decoration: none;
+        display: block;
+        transition: color 0.3s ease;
+    }
+
+    /* Hover effect for menu links */
+    .menu a:hover {
+        color: #f00; /* Example hover color */
+    }
+
+    /* For the Subscribe button, you can disable hover or keep it different */
+    .menu .subscribe-btn {
+        color: #000;
+        font-size: 24px;
+        padding: 10px 20px;
+        background-color: grey; /* Example background color */
+    }
+}
+

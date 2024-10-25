@@ -1,0 +1,410 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body {
+    font-family: system-ui;
+    background-color:grey;
+    display: flex;
+    flex-direction: column;
+  
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    list-style-type: none;
+    flex-wrap: wrap;
+    background-image: url('sample1-transformed.png');
+    background-size: cover; /* Ensure the image covers the navbar */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    height: auto; /* Allow height to adjust based on content */
+}
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0 15px;
+}
+a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    background-color: transparent;
+    position: relative; /* Required for pseudo-element positioning */
+}
+a:not(.subscribe-btn)::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px; /* Height of the underline */
+    background-color: white; /* Color of the underline */
+    left: 0;
+    bottom: -2px; /* Position the underline just below the text */
+    transition: width 0.3s ease-in-out; /* Smooth transition */
+}
+
+a:not(.subscribe-btn):hover::after {
+    width: 100%; /* Expands the underline on hover */
+}
+
+.subscribe-btn {
+    padding: 8px 16px;
+    border: 2px solid #ffffff;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.subscribe-btn:hover {
+    background-color: #ffffff;
+    color: #333;
+}
+label #btn,
+  label #cancel{
+    margin-bottom: 30px;
+    color: #3431e0;
+    font-size: 30px;
+    float: right;
+    line-height: 90px;
+    margin-right: 5px;
+    cursor: pointer;
+    display: none;
+  }
+  #check{
+    display: none;
+  }
+  .conta {
+    display: flex; /* Flexbox for left image and right form */
+    justify-content: space-between; /* Space between sides */
+    align-items: flex-start; /* Align items to the start */
+    padding: 20px; /* Padding for the container */
+}
+/* Left side for the image */
+.left-side {
+    width: 50%; /* Set width for left side */
+    display: flex; /* Flexbox for centering */
+    justify-content: center; /* Center image horizontally */
+    align-items: center; /* Center image vertically */
+    height: auto; /* Allow height to adjust automatically */
+}
+/* Image styling */
+.left-side img {
+    width: 100%; /* Full width for the image */
+    height: auto; /* Automatically adjust height based on width */
+  
+    margin-top: 130px; /* Space above the image */
+}
+/* Right side for the form */
+.con {
+    width: 40%; /* Adjust the width as needed */
+    padding: 70px; /* Add padding for spacing */
+    margin-top: 130px; /* Space above the image */
+    margin-right: 20px;
+}
+/* Heading styling */
+h2 {
+    margin-left: 75px; /* Reset left margin for mobile */
+    text-align: left; /* Align text left */
+    font-size: 60px;
+}
+/* Paragraph styling */
+p {
+    margin-top: 20px; /* Margin above paragraph */
+    font-size: 20px;
+}
+/* Button styling */
+button {
+    padding: 15px; /* Padding for button */
+    background-color: #000000; /* Button color */
+    color: #ffffff; /* Text color */
+    border: none; /* No border */
+    border-radius: 30px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    width: 100%;
+}
+button:hover {
+    background-color: rgb(58, 58, 58);
+}
+/* Input fields styling */
+input {
+    padding: 10px 40px; /* Padding for icons */
+    width: 100%; /* Full width for inputs */
+    border: 1px solid grey; /* Border styling */
+    border-radius: 10px; /* Rounded corners */
+}
+textarea {
+    border: 1px solid grey; /* Border styling */
+    border-radius: 10px; /* Rounded corners */
+    width: 100%; /* Full width for inputs */
+    padding: 10px;
+}
+/* Input group spacing */
+.input-group {
+    margin-bottom: 20px; /* Space between input fields */
+    position: relative;   
+}
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    color:  #2e2e2e;
+}
+/* ----------- Full HD Screens and Larger (1920px and above) ----------- */
+@media screen and (min-width: 1920px) {
+    .logo {
+        font-size: 30px;    
+    }
+    .menu a {
+        font-size: 30px;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .logo {
+        font-size: 30px; 
+    }   
+  .menu a {
+        font-size: 30px;
+    }
+   
+}
+@media screen and (max-width: 1024px) {
+    .logo {
+        font-size: 30px;
+       
+    }
+    .menu a {
+        font-size: 30px;
+    }
+    
+    .navbar {
+        padding: 15px;
+    }
+   
+}
+@media screen and (max-width: 991px) {
+    .logo {
+        font-size: 25px;
+       
+    }   
+    .menu a {
+        font-size: 25px;
+    }
+    .conta {
+        flex-direction: column; /* Stack elements vertically */
+        padding: 15px; /* Reduced padding */
+    }
+    .conta {
+        flex-direction: column; /* Stack elements vertically */
+        padding: 15px; /* Reduced padding */
+    }
+
+    .left-side {
+        width: 100%; /* Full width for image */
+        margin-bottom: 20px; /* Space below the image */
+    }
+
+    .con {
+        width: 100%; /* Full width for form */
+        padding: 30px; /* Adjust padding */
+        margin-top: 20px; /* Margin for spacing */
+    }
+
+    h2 {
+        font-size: 45px; /* Smaller heading for medium screens */
+        margin-left: 15px; /* Reduced left margin */
+    }
+
+    p {
+        font-size: 18px; /* Smaller paragraph text */
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .logo {
+        font-size: 30px;
+       
+    }   
+    .menu a {
+        font-size: 30px;
+    } 
+    .navbar {
+        padding: 10px;
+    }
+    .menu a {
+        padding: 15px 0; 
+    }
+}
+@media screen and (max-width: 480px) {
+    .logo {
+        font-size: 30px;
+       
+    }
+    .navbar {
+        padding: 5px; /* Further reduce padding */
+        background-size: cover; /* Ensure it covers well */
+    }
+    label #btn{
+        display: block;
+    }
+    .menu a {
+        font-size: 30px;
+    }
+    .conta {
+        padding: 10px; /* Further reduce padding */
+    }
+
+    h2 {
+        font-size: 28px; /* Adjust heading size */
+        margin-left: 5px; /* Minimal margin */
+    }
+
+    p {
+        font-size: 14px; /* Adjust paragraph size */
+    }
+
+    button {
+        padding: 10px; /* Adjust button padding */
+    }
+    
+}
+@media screen and (max-width: 768px) {
+    .logo {
+        font-size: 34px;
+        font-weight: bold;
+        color: #ffffff;
+        margin: 25px 5px;
+    }
+
+    .navbar {
+        padding: 10px; /* Reduce padding for smaller screens */
+        background-size: cover; /* Ensure it covers well */
+    }
+        .subscribe-btn {
+            font-size: 30px;
+        }
+    /* Remove hover effect on Subscribe button */
+    .subscribe-btn:hover {
+        background-color: transparent;
+        color: inherit;
+        text-decoration: none;
+    }
+
+    /* General hover effect for menu items except Subscribe */
+    .menu a:not(.subscribe-btn):hover {
+        background-color: transparent;
+        text-decoration: underline;
+        color: white;
+        cursor: pointer;
+    }
+   
+    .menu {
+        display: none; /* Initially hidden */
+        flex-direction: column;
+        position: fixed;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba( 255, 255, 255, 0 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 10px );
+        -webkit-backdrop-filter: blur( 10px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.5s ease-in-out;
+        z-index: 10;
+    }
+
+    /* When the menu checkbox is checked, show the menu */
+    #check:checked ~ .menu {
+        display: flex;
+    }
+
+    /* Hamburger icon displayed on mobile */
+    label #btn {
+        display: block;
+        font-size: 34px;
+        cursor: pointer;
+        color: white;
+    }
+
+    /* Initially, the close icon is hidden */
+    label #cancel {
+        display: none;
+        font-size: 34px;
+        cursor: pointer;
+        color: white;
+    }
+
+    /* When the menu is open, hide the hamburger icon and show the close icon */
+    #check:checked ~ label #btn {
+        display: none;
+    }
+
+    #check:checked ~ label #cancel {
+        display: block;
+    }
+
+    /* Menu links styling */
+    .menu a {
+        color: #ffffff;
+        font-size: 34px;
+        padding: 10px 20px;
+        text-decoration: none;
+        display: block;
+        transition: color 0.3s ease;
+    }
+
+    /* Hover effect for menu links */
+    .menu a:hover {
+        color: #f00; /* Example hover color */
+    }
+
+    /* For the Subscribe button, you can disable hover or keep it different */
+    .menu .subscribe-btn {
+        color: #000;
+        font-size: 24px;
+        padding: 10px 20px;
+        background-color: grey; /* Example background color */
+    }
+    .left-side {
+        margin-bottom: 10px; /* Reduce margin below the image */
+    }
+
+    h2 {
+        font-size: 32px; /* Further reduce heading size */
+    }
+
+    p {
+        font-size: 16px; /* Further reduce paragraph size */
+    }
+}
+@media (max-width: 236px) {
+    .conta {
+        padding: 5px; /* Minimal padding */
+    }
+
+    h2 {
+        font-size: 20px; /* Small heading size */
+        margin-left: 0; /* No margin */
+    }
+
+    p {
+        font-size: 12px; /* Very small paragraph size */
+    }
+
+    button {
+        padding: 5px; /* Minimal button padding */
+    }
+}
+
+
+
